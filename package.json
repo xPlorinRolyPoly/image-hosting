@@ -1,0 +1,11 @@
+{
+  "name": "alpana-nodejs",
+  "version": "1.0.0",
+  "description": "alpana-nodejs tutorial",
+  "main": "index.js",
+  "dependencies": {
+    "parse-multipart": "*"
+  },
+  "author": "",
+  "license": "ISC"
+}
