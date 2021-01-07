@@ -4,24 +4,15 @@ const s3 = new AWS.S3();
 
 const bucket = process.env.BUCKET_NAME
 
-const uploadToS3 = (bucket, key, buffer, mimeType) =>
-new Promise((resolve, reject) => {
-    s3.upload(
-    { Bucket: bucket, Key: key, Body: buffer, ContentType: mimeType },
-    function(err, data) {
-        if (err) reject(err);
-        resolve(data)
-    });
-});
-
 // "exports.handler" must match the entrypoint defined in the lambda Config.
 exports.handler = function(event,context,callback){
+    console.log(event)
     const bodyBuffer = new Buffer(event['body-json'].toString(),'base64');
     //console.log(event.params.header)
     const boundary = multipart.getBoundary(event.params.header["Content-Type"]);
 
     const parts = multipart.Parse(bodyBuffer, boundary);
-    //console.log(parts)
+    console.log(parts)
     const uploadFilename = parts[0].filename;
     const uploadBuff = parts[0].data;
     const uploadContetntType = parts[0].type;
