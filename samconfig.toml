@@ -1,0 +1,8 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "image-hosting-service"
+s3_bucket = "aws-sam-upscale"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"

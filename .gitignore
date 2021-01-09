@@ -1,0 +1,29 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### MAC OS ###
+.DS_Store
+
+### VS Code ###
+.vscode/
+.vscode-test
+
+### Python ###
+*.egg-info/
+*.pyc
+/venv/
+**/.aws-sam/
+pytest_coverage.html/
+.coverage
+pytest_unit.xml
+
+### Nodejs ###
+.npm
+node_modules
+build
+npm-debug.log
+package-lock.json
+.env
