@@ -15,7 +15,6 @@
 *.egg-info/
 *.pyc
 /venv/
-**/.aws-sam/
 pytest_coverage.html/
 .coverage
 pytest_unit.xml
@@ -27,3 +26,6 @@ build
 npm-debug.log
 package-lock.json
 .env
+
+### AWS SAM ###
+**/.aws-sam/
