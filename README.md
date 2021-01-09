@@ -1,15 +1,18 @@
 # image-hosting
 
-This Repo is still in progress..
+Repository for the image hosting service
 
-## Docker Build
+### Requirment 
+- AWS SAM CLI has to be installed. 
+- AWS credentials like Access ID and Secret access key has to be configured. 
+
+### Building App
 ```
-docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com
-
-docker build -t upscale-image-hosting .
-
-docker tag upscale-image-hosting:latest <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/upscale-image-hosting:latest
-
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/upscale-image-hosting:latest
+sam build
 ```
 
+### Deploying App
+```
+sam deploy
+```
+The application is deployed to provisioned Lambda by uploading to s3 bucket.
