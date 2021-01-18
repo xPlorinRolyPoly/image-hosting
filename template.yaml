@@ -7,7 +7,7 @@ Description: >
 
 Globals:
   Function:
-    Timeout: 3
+    Timeout: 23
     Runtime: nodejs12.x
   Api:
     BinaryMediaTypes:
@@ -38,7 +38,12 @@ Resources:
         HelloWorld:
           Type: Api
           Properties:
-            Path: /upload
+            Path: /image
             Method: post
             RestApiId:
               Ref: ImageHostApi
+
+Outputs:
+  ImageHostApi:
+    Description: "API Gateway endpoint URL for prod stage for ImageHostFunction function"
+    Value: !Sub "https://${ImageHostApi}.execute-api.${AWS::Region}.amazonaws.com/${ImageHostApi.Stage}/image"
